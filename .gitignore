@@ -1,0 +1,6 @@
+.DS_Store
+.cache
+*.in
+song_rec_venv/
+app/__pycache__/
+app/.env
