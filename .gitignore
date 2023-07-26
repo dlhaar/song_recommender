@@ -4,3 +4,4 @@
 song_rec_venv/
 app/__pycache__/
 app/.env
+data/prep/
