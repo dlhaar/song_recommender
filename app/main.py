@@ -28,7 +28,6 @@ if (len(title)>0) and (len(artist)>0):
 
 	df_results = functions.search_song(title, artist)
 
-	#if type(df_results) == pd.DataFrame:
 	if df_results.shape[0] > 0:
 
 		st.dataframe(df_results[['titles', 'artists', 'album']])
@@ -71,7 +70,7 @@ if (len(title)>0) and (len(artist)>0):
 
 			
 
-			#model predict cluster
+			#model cluster user song
 			with open('models/kmeans_13.pickle', "rb") as file:
 			    kmeans = pickle.load(file)
 
@@ -95,16 +94,13 @@ if (len(title)>0) and (len(artist)>0):
 
 			else:
 				suggestion = clustered_songs[(clustered_songs['dataset'] == 'N')& (clustered_songs['cluster'] == cluster[0]) & ~(clustered_songs['id'] == id_number)]
-				suggestion['url'] = suggestion['id'].apply(lambda x: "https://open.spotify.com/track/" + x)				#ids = clustered_songs[(clustered_songs['dataset'] == 'N')& (clustered_songs['cluster'] == cluster[0]) & ~(clustered_songs['id'] == id_number)]
-				#suggestion['url'] = 'www.open.spotify.com/track/' + ids
+				suggestion['url'] = suggestion['id'].apply(lambda x: "https://open.spotify.com/track/" + x)
 				suggestion['url'] = suggestion['url'].apply(make_clickable)
 				suggestion = suggestion[['titles', 'artists','url']].sample(5)
-				suggestion = suggestion.to_html(escape=False)
+				suggestion = suggestion.to_html(escape=False, index=False)
 				st.markdown("Here are some songs to check out:")
-				st.write(suggestion, unsafe_allow_html=True)
+				st.write(suggestion, unsafe_allow_html=True) 
 
-			
-			st.markdown("Try again for more suggestions")
 
 
 	else:
