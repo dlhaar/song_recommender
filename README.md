@@ -1,5 +1,7 @@
 # Spotifind - Song Recommendation App
 
-Spotifind provides Spotify song recommendations based on user song input. The app was built with Streamlit and can be found (here)[https://songrecommender.streamlit.app/].
+Spotifind provides Spotify song recommendations based on user song input. 
 
-Spotifind v1. was built with (Arya Sheth)[https://github.com/aryasheth119/Song_recommender]
+The app was built with Streamlit and can be found [here](https://songrecommender.streamlit.app/).
+
+Spotifind v1. was built with [Arya Sheth](https://github.com/aryasheth119/Song_recommender) as part of our participation in the Ironhack bootcamp.
