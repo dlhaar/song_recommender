@@ -5,6 +5,14 @@ import time
 import pickle
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
+from dotenv import load_dotenv
+import os
+
+#input credentials
+load_dotenv()
+
+CLIENT_ID = os.getenv("CLIENT_ID")
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 
 
 
